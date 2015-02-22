@@ -1,0 +1,19 @@
+
+#nginx:
+#  build: nginx/.
+#  links:
+#   - registry
+#  ports:
+#   - "8080:8080"
+
+elasticsearch:
+  image: dockerfile/elasticsearch
+  ports:
+   - "9200:9200"
+   - "9300:9300"
+  volumes:
+   - ./elasticsearch/data:/es/data
+   - ./elasticsearch/config:/es/config
+   - ./elasticsearch/logs:/es/logs
+  environment:
+   - es.config=/es/config/elasticsearch.yml
