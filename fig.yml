@@ -12,8 +12,10 @@ elasticsearch:
    - "9200:9200"
    - "9300:9300"
   volumes:
-   - ./elasticsearch/data:/es/data
-   - ./elasticsearch/config:/es/config
-   - ./elasticsearch/logs:/es/logs
-  environment:
-   - es.config=/es/config/elasticsearch.yml
+   - ./elasticsearch/data:/data
+  command: /elasticsearch/bin/elasticsearch -Des.config=/data/elasticsearch.yml
+
+elastichq:
+  image: geertvb/elastichq
+  ports:
+   - "80:80"
