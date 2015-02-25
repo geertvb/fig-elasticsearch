@@ -2,5 +2,8 @@ path:
   logs: /data/log
   data: /data/data
 
+cluster:
+  name: dockerES
+
 http.cors.allow-origin: "/.*/"
 http.cors.enabled: true
