@@ -12,7 +12,7 @@ elasticsearch:
    - "9200:9200"
    - "9300:9300"
   volumes:
-   - /c/Users/bastege/fig/fig-elasticsearch/elasticsearch/data:/data
+   - ./elasticsearch/data:/data
   command: /elasticsearch/bin/elasticsearch -Des.config=/data/elasticsearch.yml
 
 elastichq:
@@ -21,6 +21,6 @@ elastichq:
    - "80:80"
 
 hawtio:
-  build: hawtio
+  image: geertvb/hawtio
   ports:
    - "8080:8080"
